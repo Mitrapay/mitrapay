@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageDocTitle">Biswas Enterprise Operating Suite</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <div id="sidebarBackdrop" class="sidebar-mobile-backdrop" onclick="closeMobileSidebars()"></div>
+
+  <!-- ================= PUBLIC HOMEPAGE ================= -->
+  <div id="loginScreen" class="public-landing-wrapper">
+    <header class="public-navbar">
+      <div class="nav-brand">
+        <div class="nav-logo-badge" id="publicBrandLogoWrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="brand-text">
+          <strong id="webBrandTitle">BISWAS DIGITAL</strong>
+          <span id="webBrandSub">Enterprise Smart Portal</span>
+        </div>
+      </div>
+      <div class="nav-actions-group">
+        <button type="button" class="btn-box-nav purple" onclick="openPanCorrectionModal('PUBLIC')">PAN Correction</button>
+        <button type="button" class="btn-box-nav green" onclick="openPublicPanModal()">New PAN</button>
+        <button type="button" class="btn-box-nav blue" onclick="openRetailerSelfRegModal()">Self Register Retailer</button>
+        <a id="btnNavDownloadApk" href="BiswasDigital.apk" download class="btn-box-nav" style="background:#0f172a; color:#fff; text-decoration:none;">Download APK</a>
+        <button type="button" class="btn-box-nav outline" onclick="openLoginModal()">Partner Login</button>
+        <a id="btnNavWhatsApp" href="#" target="_blank" class="btn-box-nav wa">WhatsApp</a>
+      </div>
+    </header>
+
+    <div class="global-notice-strip no-print">
+      <span class="notice-badge">NOTICE</span>
+      <marquee id="publicNoticeMarquee" scrollamount="4">Welcome to Biswas Enterprise Portal! All services are active and running securely.</marquee>
+    </div>
+
+    <section class="hero-split-section">
+      <div class="hero-left-content">
+        <div class="trust-pill-tag">
+          <span class="pulse-dot"></span> Authorized B2B PAN & Digital Services Node
+        </div>
+        <h1 class="hero-title" id="webHeroTitle">Next-Gen Digital Operations & Coupon Network</h1>
+        <p class="hero-desc" id="webHeroDesc">Authorized distributor network delivering Smart NSDL without OTP/Biometrics, UTIITSL offline processing, correction engine, and automated coupon float allocation.</p>
+        
+        <div class="hero-stats-row">
+          <div class="stat-item"><strong>100%</strong><span>Instant Processing</span></div>
+          <div class="stat-item"><strong>JPG & PDF</strong><span>Document Support</span></div>
+          <div class="stat-item"><strong>Android</strong><span>Fintech App UI</span></div>
+        </div>
+
+        <div class="hero-action-pills">
+          <button type="button" onclick="openPanCorrectionModal('PUBLIC')" class="hero-box-btn purple">
+            <span class="box-btn-icon">🛠️</span>
+            <div class="box-btn-texts"><strong>PAN Correction (CSF)</strong><span>Update Name, DOB, Photo</span></div>
+          </button>
+          <button type="button" onclick="openPublicPanModal()" class="hero-box-btn green">
+            <span class="box-btn-icon">📄</span>
+            <div class="box-btn-texts"><strong>Apply New PAN</strong><span>Smart NSDL & UTIITSL</span></div>
+          </button>
+          <button type="button" onclick="openRetailerSelfRegModal()" class="hero-box-btn blue">
+            <span class="box-btn-icon">📝</span>
+            <div class="box-btn-texts"><strong>New Retailer Self Register</strong><span>PIN-Based Distributor / Admin Route</span></div>
+          </button>
+          <a id="btnHeroDownloadApk" href="BiswasDigital.apk" download class="hero-box-btn outline" style="text-decoration:none;">
+            <span class="box-btn-icon">📲</span>
+            <div class="box-btn-texts"><strong>Download APK</strong><span>Official Android Mobile App</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right-card">
+        <div class="auth-hero-banner-card">
+          <div class="auth-badge">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 19px; font-weight: 800; margin-bottom: 6px; color: #0f172a;">Enterprise Portal Gateway</h3>
+          <p class="text-secondary" style="margin-bottom: 18px;">Sign in using your User ID or Registered Mobile Number.</p>
+          <button type="button" class="btn-primary-action w-full" onclick="openLoginModal()">
+            <span>Open Login Terminal</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button type="button" class="btn-secondary-action w-full mt-2" style="background:#eff6ff; color:#1d4ed8; border-color:#93c5fd;" onclick="openRetailerSelfRegModal()">
+            New Retailer Self Registration
+          </button>
+          <a id="btnCardDownloadApk" href="BiswasDigital.apk" download class="btn-secondary-action w-full mt-2" style="display:flex; justify-content:center; align-items:center; gap:6px; text-decoration:none;">
+            <span>Download Android APK</span>
+          </a>
+          <div class="auth-footer-tag">ENTERPRISE CLOUD • ENCRYPTED SESSION</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicesSec" class="public-services-section">
+      <div class="section-badge-center">SERVICES & INTEGRATION</div>
+      <h3 class="section-heading-center">Built for Speed and Reliability</h3>
+      <div class="features-grid">
+        <div class="feature-card clickable-feature" onclick="openPanCorrectionModal('PUBLIC')">
+          <div class="feature-icon bg-purple">🛠️</div>
+          <h4>PAN Correction (CSF)</h4>
+          <p>Name, DOB, Father Name, Address, Photo & Signature correction with NSDL / UTIITSL auto-sizing.</p>
+          <button type="button" class="btn-card-action">Open Correction Form →</button>
+        </div>
+        <div class="feature-card clickable-feature" onclick="openPublicPanModal()">
+          <div class="feature-icon bg-green">⚡</div>
+          <h4>Smart NSDL & UTIITSL PAN</h4>
+          <p>Instant submission with JPG & PDF document uploads and real-time tracking.</p>
+          <button type="button" class="btn-card-action">Apply New PAN →</button>
+        </div>
+        <div class="feature-card clickable-feature" onclick="openRetailerSelfRegModal()">
+          <div class="feature-icon bg-blue">📝</div>
+          <h4>New Retailer Self Register</h4>
+          <p>Register by PIN code. Routes to local Distributor if available, or directly to Admin.</p>
+          <button type="button" class="btn-card-action">Register Now →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="quickTrackSec" class="public-utility-section">
+      <div class="section-badge-center">ONLINE TRACKING</div>
+      <h3 class="section-heading-center">Track Application Progress</h3>
+      <p class="section-sub-center">Enter your reference code (REG..., N..., NC..., U..., or UC...) to check verification status and official allotment.</p>
+      <div class="public-tool-card">
+        <div class="search-input-wrap">
+          <input type="text" id="publicTrackInput" placeholder="Enter Reference Code (e.g. REG123456789, N123456789)" class="font-mono">
+          <button type="button" id="btnPublicTrack" class="btn-primary-action">Check Status</button>
+        </div>
+        <div id="publicTrackResult" class="public-result-box" style="display: none;"></div>
+      </div>
+    </section>
+
+    <footer id="contactSec" class="public-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 id="footerCompanyName">BISWAS DIGITAL SERVICES</h4>
+          <p>Main Operative Node: Biswas Cyber Cafe, Maynaguri, Jalpaiguri, West Bengal, 735305.</p>
+          <p>Authorized Officer: <strong>Debajit Biswas</strong></p>
+        </div>
+        <div class="footer-col">
+          <h4>OFFICIAL HELPLINE</h4>
+          <p>Phone: <strong id="footerCompanyPhone">+91 9876543210</strong></p>
+          <p>Email: <strong id="footerCompanyEmail">biswascybercafe88@gmail.com</strong></p>
+          <p>Working Hours: 08:00 AM - 10:00 PM (IST)</p>
+        </div>
+        <div class="footer-col">
+          <h4>MOBILE APP & SUPPORT</h4>
+          <a id="btnFooterDownloadApk" href="BiswasDigital.apk" download class="btn-whatsapp-footer" style="background:#2563eb; margin-bottom:8px;"><span>Download Android APK</span></a><br>
+          <a id="btnFooterWhatsApp" href="#" target="_blank" class="btn-whatsapp-footer"><span>Open WhatsApp Business Chat</span></a>
+        </div>
+      </div>
+      <div class="footer-bottom-bar"><span>© 2026 <span id="footerCopyrightBrand">Biswas Enterprise Operating Suite</span> • Managed by Debajit Biswas.</span></div>
+    </footer>
+
+    <a id="floatingWhatsAppBtn" href="#" target="_blank" class="floating-wa-btn" title="Chat on WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    </a>
+  </div>
+
+  <!-- ================= NEW RETAILER SELF-REGISTRATION MODAL ================= -->
+  <div class="modal-overlay no-print" id="retailerSelfRegModal">
+    <div class="modal-box text-left" style="max-width: 580px; max-height: 92vh; overflow-y: auto;">
+      <div class="modal-header flex-between">
+        <div>
+          <span class="modal-badge" style="background:#eff6ff; color:#1d4ed8;">New Retailer Onboarding</span>
+          <h3 style="font-size: 17px; margin-top: 4px; font-weight: 800;">New Retailer Self Registration</h3>
+        </div>
+        <button type="button" class="btn-mini-action" onclick="closeRetailerSelfRegModal()">Close</button>
+      </div>
+      <p class="text-secondary mt-1">Enter your 6-digit PIN code. If a Distributor covers your PIN, your request routes to that Distributor; otherwise it goes to Admin.</p>
+
+      <form id="retailerSelfRegForm" class="mt-3">
+        <div class="grid-two">
+          <div class="input-group">
+            <label>6-Digit PIN Code *</label>
+            <input type="text" id="selfRegPin" maxlength="6" required class="font-mono font-bold" placeholder="e.g. 735305" oninput="checkSelfRegPinDistributor(this.value)">
+          </div>
+          <div class="input-group">
+            <label>Assigned Route</label>
+            <input type="text" id="selfRegRoutePreview" readonly class="locked-readonly-input" value="Enter PIN to check">
+          </div>
+        </div>
+
+        <div class="grid-two">
+          <div class="input-group"><label>Applicant Full Name *</label><input type="text" id="selfRegName" required minlength="3"></div>
+          <div class="input-group"><label>WhatsApp Mobile (10 Digits) *</label><input type="tel" id="selfRegPhone" maxlength="10" required pattern="[0-9]{10}"></div>
+        </div>
+
+        <div class="grid-two">
+          <div class="input-group"><label>Email ID *</label><input type="email" id="selfRegEmail" required></div>
+          <div class="input-group"><label>PAN Card Number (10 Chars) *</label><input type="text" id="selfRegPan" maxlength="10" required class="font-mono" style="text-transform:uppercase;"></div>
+        </div>
+
+        <div class="input-group"><label>ID Number (12 Digits) *</label><input type="text" id="selfRegIdNo" maxlength="12" required class="font-mono" pattern="[0-9]{12}"></div>
+        <div class="input-group"><label>Full Shop / Communication Address *</label><textarea id="selfRegAddress" rows="2" required></textarea></div>
+
+        <button type="submit" class="btn-primary-action w-full mt-2" style="background:#10b981;">Submit Self Registration</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= DIRECT COUPON REQUEST MODAL (AUTO AMOUNT + RAZORPAY REDIRECT) ================= -->
+  <div class="modal-overlay no-print" id="couponRequestModal">
+    <div class="modal-box text-left" style="max-width: 450px;">
+      <div class="modal-header flex-between">
+        <div>
+          <span class="modal-badge" style="background:#ecfdf5; color:#059669;">Coupon Wallet & Razorpay</span>
+          <h3 style="font-size: 17px; margin-top: 4px; font-weight: 800;">Direct Coupon Request</h3>
+        </div>
+        <button type="button" class="btn-mini-action" onclick="closeCouponRequestModal()">Close</button>
+      </div>
+      <p class="text-secondary mt-1">Enter coupon count to calculate total amount automatically and proceed to Razorpay payment.</p>
+
+      <form id="directCouponRequestForm" class="mt-3">
+        <div class="input-group">
+          <label>Coupon Service Type *</label>
+          <select id="coupReqPortalSelect" onchange="recalculateCouponRequestTotal()">
+            <option value="UTIITSL">UTIITSL Coupon (Base ₹100)</option>
+            <option value="NSDL">NSDL Coupon (Base ₹107)</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Number of Coupons *</label>
+          <input type="number" id="coupReqQtyInput" min="1" value="10" required class="font-mono font-bold" oninput="recalculateCouponRequestTotal()">
+        </div>
+        <div class="input-group">
+          <label>Rate per Coupon (INR)</label>
+          <input type="text" id="coupReqUnitRateDisplay" readonly class="locked-readonly-input font-mono">
+        </div>
+        <div class="input-group">
+          <label>Total Amount (INR)</label>
+          <input type="text" id="coupReqAmountDisplay" readonly class="locked-readonly-input font-mono" style="font-size:15px; color:#059669;">
+          <input type="hidden" id="coupReqAmountInput" value="0">
+        </div>
+
+        <button type="submit" class="btn-primary-action w-full mt-3" style="background:#2563eb;">Submit & Pay via Razorpay</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= KYC PENDING / INACTIVE / REJECTED LOCK SCREEN ================= -->
+  <div id="kycPendingScreen" class="kyc-lock-wrapper" style="display: none;">
+    <div class="kyc-lock-card">
+      <div id="kycLockIcon" style="width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%; background: #fef3c7; border: 2px solid #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 34px;">⏳</div>
+      <span class="modal-badge" id="kycLockBadge" style="background:#fef3c7; color:#b45309;">VERIFICATION REQUIRED</span>
+      <h2 id="kycLockTitle" style="font-size: 22px; font-weight: 800; color: #b45309; margin-top: 10px;">Your KYC is Pending</h2>
+      <p class="text-secondary mt-2" id="kycLockDesc">
+        Hello <strong id="kycPendingUserName">Agent</strong> (<code id="kycPendingUserId">-</code>),<br>
+        Your account is currently locked. Portal options remain hidden until the Officer approves or reactivates your account.
+      </p>
+      <div id="kycRejectionReasonBox" style="display:none; background:#fef2f2; border:1px solid #fca5a5; color:#991b1b; padding:12px; border-radius:10px; margin-top:12px; font-size:12px; text-align:left;">
+        <strong>Notice / Reason:</strong>
+        <p id="kycRejectionReasonText" style="margin-top:4px;"></p>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; margin: 18px 0; font-size: 12px; text-align: left;">
+        <div class="flex-between"><span>Account Role:</span><strong id="kycPendingUserRole">-</strong></div>
+        <div class="flex-between mt-1"><span>Registered Mobile:</span><strong id="kycPendingUserPhone">-</strong></div>
+        <div class="flex-between mt-1"><span>Current Status:</span><strong id="kycPendingStatusLabel" style="color:#d97706;">KYC_PENDING</strong></div>
+      </div>
+      <div class="grid-two">
+        <button type="button" class="btn-primary-action" onclick="checkLiveKycApprovalStatus()">Check Status</button>
+        <button type="button" class="btn-secondary-action instant-logout-btn">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= OFFICER-ONLY PSA PHOTO & SIGN STUDIO ================= -->
+  <div class="modal-overlay no-print" id="psaFormEditorModal">
+    <div class="modal-box text-left" style="max-width: 900px; max-height: 94vh; overflow-y: auto;">
+      <div class="modal-header flex-between">
+        <div>
+          <span class="modal-badge" style="background:#eff6ff; color:#1d4ed8;">PSA Document Studio</span>
+          <h3 style="font-size: 17px; margin-top: 4px; font-weight: 800;">PSA Form (2 Photos + 2 Signatures + Extra JPG/PDF Docs)</h3>
+        </div>
+        <button type="button" class="btn-mini-action" onclick="closePsaFormEditorModal()">Close</button>
+      </div>
+
+      <div class="grid-three mt-3">
+        <div class="input-group">
+          <label>1. Upload PSA Form (JPG / PNG / PDF) *</label>
+          <input type="file" id="psaSourceFormInput" accept="image/jpeg,image/png,application/pdf" onchange="handlePsaFormUpload(this)">
+        </div>
+        <div class="input-group">
+          <label>2. Upload Photo (Auto 2 Photos Placed) *</label>
+          <input type="file" id="psaApplicantPhotoInput" accept="image/jpeg,image/png" onchange="handlePsaPhotoUpload(this)">
+        </div>
+        <div class="input-group">
+          <label>3. Upload Signature (Auto 2 Signs + BG Remove) *</label>
+          <input type="file" id="psaApplicantSignInput" accept="image/jpeg,image/png" onchange="handlePsaSignUpload(this)">
+        </div>
+      </div>
+
+      <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:12px; padding:12px 14px; margin-bottom:12px;">
+        <div class="flex-between">
+          <strong style="font-size:12px; color:#0f172a;">Additional Documents (Add Any Number • JPG / PDF)</strong>
+          <button type="button" class="btn-mini-action" style="background:#dbeafe; color:#1d4ed8;" onclick="addExtraPsaDocumentRow()">+ Add Document</button>
+        </div>
+        <div id="psaExtraDocsContainer" class="mt-2" style="display:flex; flex-direction:column; gap:8px;">
+          <div class="flex-align-center" style="gap:8px;">
+            <input type="file" class="psa-extra-doc-file" accept="image/jpeg,image/png,application/pdf" style="flex:1; font-size:11px;">
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:12px; padding:12px 14px; margin-bottom:14px;">
+        <div class="flex-between" style="flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+          <strong style="font-size:12px; color:#0f172a;">Manual Adjustment (Drag on Form or Use Sliders)</strong>
+          <div style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button type="button" class="btn-mini-action" style="background:#dcfce7; color:#15803d;" onclick="setActivePsaLayer('SIGN_BOTTOM')">Bottom Sign</button>
+            <button type="button" class="btn-mini-action" style="background:#d1fae5; color:#065f46;" onclick="setActivePsaLayer('SIGN_CROSS')">Cross Sign</button>
+            <button type="button" class="btn-mini-action" style="background:#dbeafe; color:#1d4ed8;" onclick="setActivePsaLayer('PHOTO_RIGHT')">Right Photo</button>
+            <button type="button" class="btn-mini-action" style="background:#e0e7ff; color:#3730a3;" onclick="setActivePsaLayer('PHOTO_LEFT')">Left Photo</button>
+            <button type="button" class="btn-mini-action" onclick="resetPsaLayerTransforms()">Reset</button>
+          </div>
+        </div>
+
+        <div class="grid-three">
+          <div class="input-group" style="margin-bottom:4px;">
+            <label>Horizontal (X): <span id="psaPosXVal" class="font-mono">72%</span></label>
+            <input type="range" id="psaPosXRange" min="0" max="90" value="72" oninput="updatePsaLayerFromSliders()">
+          </div>
+          <div class="input-group" style="margin-bottom:4px;">
+            <label>Vertical (Y): <span id="psaPosYVal" class="font-mono">78%</span></label>
+            <input type="range" id="psaPosYRange" min="0" max="90" value="78" oninput="updatePsaLayerFromSliders()">
+          </div>
+          <div class="input-group" style="margin-bottom:4px;">
+            <label>Size / Scale: <span id="psaScaleVal" class="font-mono">100%</span></label>
+            <input type="range" id="psaScaleRange" min="30" max="220" value="100" oninput="updatePsaLayerFromSliders()">
+          </div>
+        </div>
+
+        <div class="flex-between mt-1" style="flex-wrap:wrap; gap:8px;">
+          <label style="font-size:11.5px; font-weight:700; color:#065f46; display:flex; align-items:center; gap:6px;">
+            <input type="checkbox" id="psaRemoveSignBgChk" checked onchange="reprocessPsaSignatureBg()">
+            Signature Background Removed (Transparent Ink)
+          </label>
+          <span style="font-size:11px; color:var(--text-secondary);">Active Target: <strong id="psaActiveTargetLabel">SIGN_BOTTOM</strong></span>
+        </div>
+      </div>
+
+      <div style="background:#334155; padding:14px; border-radius:12px; overflow:auto; max-height:460px; display:flex; justify-content:center;">
+        <canvas id="psaInteractiveCanvas" width="595" height="842" style="background:#ffffff; border-radius:6px; box-shadow:0 12px 28px rgba(0,0,0,0.35); cursor:grab; max-width:100%; height:auto;"></canvas>
+      </div>
+
+      <div class="grid-two mt-3">
+        <button type="button" class="btn-primary-action" style="background:#059669;" onclick="downloadPsaAdjustedPdf()">Download Merged PSA PDF (Form + Docs)</button>
+        <button type="button" class="btn-secondary-action" onclick="downloadPsaAdjustedImage()">Download Form Image (JPG)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 1. RETAILER PROFESSIONAL DASHBOARD ================= -->
+  <div id="retailerPortalContainer" class="enterprise-portal-shell" style="display: none;">
+    <aside class="portal-sidebar" id="retailerSidebar">
+      <div>
+        <div class="sidebar-brand-header">
+          <div class="sidebar-logo-icon" id="retSidebarLogo">B</div>
+          <div class="sidebar-brand-info">
+            <strong class="dynamic-app-brand-name">BISWAS DIGITAL</strong>
+            <span>Retailer App</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav-menu">
+          <div class="sidebar-section-label">MAIN MENU</div>
+          <button type="button" class="sidebar-nav-item active" onclick="closeMobileSidebars()">
+            <span class="nav-icon">📊</span> Dashboard Home
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openCouponRequestModal()">
+            <span class="nav-icon">🎫</span> Direct Coupon Request
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); launchRetailerPanForm('NSDL')">
+            <span class="nav-icon">⚡</span> Smart NSDL New PAN
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); launchRetailerPanForm('UTIITSL')">
+            <span class="nav-icon">📋</span> UTIITSL Offline PAN
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openPanCorrectionModal('RETAILER')">
+            <span class="nav-icon">🛠️</span> PAN Correction (CSF)
+          </button>
+
+          <div class="sidebar-section-label">ACCOUNT & SUPPORT</div>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openProfileModal('RETAILER')">
+            <span class="nav-icon">👤</span> My Profile & Upline
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openComplaintModal()">
+            <span class="nav-icon">📢</span> Raise Support Ticket
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer-box">
+        <div class="sidebar-user-chip">
+          <div class="sidebar-avatar">R</div>
+          <div class="sidebar-user-meta">
+            <strong id="retSidebarUserName">Retailer</strong>
+            <span id="retSidebarUserId">R000000000</span>
+          </div>
+        </div>
+        <button type="button" class="btn-secondary-action w-full instant-logout-btn" style="background:#1e293b; color:#f87171; border-color:#334155;">Secure Logout</button>
+      </div>
+    </aside>
+
+    <div class="portal-main-content">
+      <div class="global-notice-strip no-print">
+        <span class="notice-badge">NOTICE</span>
+        <marquee id="retailerNoticeMarquee" scrollamount="4">Loading broadcast notice...</marquee>
+      </div>
+
+      <header class="portal-top-header no-print">
+        <div class="header-left-group">
+          <button type="button" class="mobile-menu-toggle" onclick="toggleMobileSidebar('retailerSidebar')">☰</button>
+          <div class="header-page-title">
+            <h2 id="retailerNameTitle">Retailer Dashboard</h2>
+            <span>Fintech Services Node</span>
+          </div>
+        </div>
+        <div class="flex-align-center">
+          <button type="button" class="btn-mini-action" style="background:#10b981; color:#fff; border:none; padding:8px 12px;" onclick="openCouponRequestModal()">+ Coupon Request</button>
+          <div class="wallet-badge-pill">
+            <span>Coupons:</span>
+            <strong id="retCouponDisplay" class="font-mono">0 Pcs</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="portal-workspace-body">
+        <div class="fintech-hero-banner">
+          <div>
+            <span>AVAILABLE COUPON WALLET</span>
+            <strong id="retHeroBalance" class="font-mono">0 Pcs</strong>
+          </div>
+          <button type="button" class="btn-fintech-light" onclick="openCouponRequestModal()">🎫 Direct Coupon Request</button>
+        </div>
+
+        <div class="kpi-stats-grid">
+          <div class="kpi-stat-card">
+            <div class="kpi-stat-info"><span>Coupon Balance</span><strong id="retKpiCoupons" class="font-mono text-success">0 Pcs</strong></div>
+            <div class="kpi-stat-icon bg-green">🎫</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-stat-info"><span>Total Applications</span><strong id="retKpiTotalApps">0</strong></div>
+            <div class="kpi-stat-icon bg-blue">📄</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-stat-info"><span>Account Status</span><strong style="font-size:15px; color:#10b981;">VERIFIED</strong></div>
+            <div class="kpi-stat-icon bg-purple">✅</div>
+          </div>
+          <div class="kpi-stat-card">
+            <div class="kpi-stat-info"><span>Service Node</span><strong style="font-size:15px; color:#2563eb;">ACTIVE</strong></div>
+            <div class="kpi-stat-icon bg-amber">⚡</div>
+          </div>
+        </div>
+
+        <div class="app-grid-section-title">FINTECH & PAN SERVICES</div>
+        <div class="portal-boxed-grid">
+          <div class="portal-boxed-card green" onclick="openCouponRequestModal()">
+            <div class="boxed-icon">🎫</div>
+            <div class="boxed-title">Direct Coupon Request</div>
+            <div class="boxed-desc">Auto Amount & Razorpay Payment</div>
+          </div>
+          <div class="portal-boxed-card blue" onclick="launchRetailerPanForm('NSDL')">
+            <div class="boxed-icon">⚡</div>
+            <div class="boxed-title">Smart NSDL Direct</div>
+            <div class="boxed-desc">Instant 49A without OTP / Biometric</div>
+          </div>
+          <div class="portal-boxed-card amber" onclick="launchRetailerPanForm('UTIITSL')">
+            <div class="boxed-icon">📋</div>
+            <div class="boxed-title">UTIITSL Offline PAN</div>
+            <div class="boxed-desc">Fast Form 49A Document Processor</div>
+          </div>
+          <div class="portal-boxed-card purple" onclick="openPanCorrectionModal('RETAILER')">
+            <div class="boxed-icon">🛠️</div>
+            <div class="boxed-title">PAN Correction (CSF)</div>
+            <div class="boxed-desc">Update Name, DOB, Photo & Signature</div>
+          </div>
+        </div>
+
+        <div class="terminal-card mt-3">
+          <div class="card-title-group flex-between">
+            <h4>Recent Applications History</h4>
+            <span class="status-badge-inline" id="retAppCounter">0 Records</span>
+          </div>
+          <div id="retailerHistoryContainer" class="vault-results-container mt-2"></div>
+        </div>
+
+        <div class="terminal-card mt-3">
+          <div class="card-title-group flex-between">
+            <h4>My Support Tickets & Status</h4>
+            <button type="button" class="btn-mini-action" style="background:#ffe4e6; color:#e11d48;" onclick="openComplaintModal()">+ New Ticket</button>
+          </div>
+          <div id="retMyTicketsList" class="vault-results-container mt-2"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ================= 2. DISTRIBUTOR PROFESSIONAL DASHBOARD ================= -->
+  <div id="chainPortalContainer" class="enterprise-portal-shell" style="display: none;">
+    <aside class="portal-sidebar" id="distributorSidebar">
+      <div>
+        <div class="sidebar-brand-header">
+          <div class="sidebar-logo-icon" id="distSidebarLogo">D</div>
+          <div class="sidebar-brand-info">
+            <strong class="dynamic-app-brand-name">BISWAS DIGITAL</strong>
+            <span>Distributor App</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav-menu">
+          <div class="sidebar-section-label">DISTRIBUTOR MENU</div>
+          <button type="button" class="sidebar-nav-item active" id="navDistHome" onclick="closeMobileSidebars(); returnDistributorHome()">
+            <span class="nav-icon">📊</span> Dashboard Overview
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openCouponRequestModal()">
+            <span class="nav-icon">🎫</span> Direct Coupon Request
+          </button>
+          <button type="button" class="sidebar-nav-item" id="navDistTransfer" onclick="closeMobileSidebars(); triggerDistSection('chainTransferCard')">
+            <span class="nav-icon">💳</span> Transfer Coupons
+          </button>
+          <button type="button" class="sidebar-nav-item" id="navDistCreate" onclick="closeMobileSidebars(); triggerDistSection('chainCreateUserCard')">
+            <span class="nav-icon">👤</span> Register Retailer
+          </button>
+          <button type="button" class="sidebar-nav-item" id="navDistList" onclick="closeMobileSidebars(); triggerDistSection('chainDirectoryCard')">
+            <span class="nav-icon">🏪</span> My Retailer Network
+          </button>
+
+          <div class="sidebar-section-label">ACCOUNT & SUPPORT</div>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openProfileModal('DISTRIBUTOR')">
+            <span class="nav-icon">🪪</span> My Profile & Zone
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openComplaintModal()">
+            <span class="nav-icon">📢</span> Raise Support Ticket
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer-box">
+        <div class="sidebar-user-chip">
+          <div class="sidebar-avatar">D</div>
+          <div class="sidebar-user-meta">
+            <strong id="distSidebarUserName">Distributor</strong>
+            <span id="distSidebarUserId">D000000000</span>
+          </div>
+        </div>
+        <button type="button" class="btn-secondary-action w-full instant-logout-btn" style="background:#1e293b; color:#f87171; border-color:#334155;">Secure Logout</button>
+      </div>
+    </aside>
+
+    <div class="portal-main-content">
+      <div class="global-notice-strip no-print">
+        <span class="notice-badge">NOTICE</span>
+        <marquee id="chainNoticeMarquee" scrollamount="4">Loading broadcast notice...</marquee>
+      </div>
+
+      <header class="portal-top-header no-print">
+        <div class="header-left-group">
+          <button type="button" class="mobile-menu-toggle" onclick="toggleMobileSidebar('distributorSidebar')">☰</button>
+          <div class="header-page-title">
+            <h2 id="chainPortalTitle">Distributor Console</h2>
+            <span id="chainPortalSubtitle">Territory & Retailer Network Management</span>
+          </div>
+        </div>
+        <div class="flex-align-center">
+          <button type="button" class="btn-mini-action" style="background:#10b981; color:#fff; border:none; padding:8px 12px;" onclick="openCouponRequestModal()">+ Coupon Request</button>
+          <div class="wallet-badge-pill">
+            <span>Coupons:</span>
+            <strong id="chainCouponDisplay" class="font-mono">0 Pcs</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="portal-workspace-body">
+        <div id="chainAppGrid" class="no-print">
+          <div class="fintech-hero-banner">
+            <div>
+              <span>DISTRIBUTOR COUPON FLOAT</span>
+              <strong id="distHeroBalance" class="font-mono">0 Pcs</strong>
+            </div>
+            <button type="button" class="btn-fintech-light" onclick="openCouponRequestModal()">🎫 Direct Coupon Request</button>
+          </div>
+
+          <div class="kpi-stats-grid">
+            <div class="kpi-stat-card">
+              <div class="kpi-stat-info"><span>Coupon Stock</span><strong id="distKpiCoupons" class="font-mono text-success">0 Pcs</strong></div>
+              <div class="kpi-stat-icon bg-green">💳</div>
+            </div>
+            <div class="kpi-stat-card">
+              <div class="kpi-stat-info"><span>Total Retailers</span><strong id="distKpiRetailers">0</strong></div>
+              <div class="kpi-stat-icon bg-blue">🏪</div>
+            </div>
+            <div class="kpi-stat-card">
+              <div class="kpi-stat-info"><span>Allocated PINs</span><strong id="distKpiPins" style="font-size:14px; color:#2563eb;">-</strong></div>
+              <div class="kpi-stat-icon bg-purple">📍</div>
+            </div>
+            <div class="kpi-stat-card">
+              <div class="kpi-stat-info"><span>Service Node</span><strong style="font-size:15px; color:#10b981;">ACTIVE</strong></div>
+              <div class="kpi-stat-icon bg-amber">🛡️</div>
+            </div>
+          </div>
+
+          <div class="app-grid-section-title">NETWORK CONTROLS</div>
+          <div class="portal-boxed-grid">
+            <div class="portal-boxed-card green" onclick="openCouponRequestModal()">
+              <div class="boxed-icon">🎫</div>
+              <div class="boxed-title">Direct Coupon Request</div>
+              <div class="boxed-desc">Auto Amount & Razorpay Payment</div>
+            </div>
+            <div class="portal-boxed-card purple" id="tileChainTransfer">
+              <div class="boxed-icon">💳</div>
+              <div class="boxed-title">Transfer Coupons</div>
+              <div class="boxed-desc">Send coupon stock to approved retailers</div>
+            </div>
+            <div class="portal-boxed-card green" id="tileChainCreateUser">
+              <div class="boxed-icon">👤</div>
+              <div class="boxed-title">Register Retailer</div>
+              <div class="boxed-desc">Onboard new retailer (KYC approval required)</div>
+            </div>
+            <div class="portal-boxed-card blue" id="tileChainRetailers">
+              <div class="boxed-icon">🏪</div>
+              <div class="boxed-title">Retailer List</div>
+              <div class="boxed-desc">View all retailers under your network</div>
+            </div>
+          </div>
+
+          <div class="terminal-card mt-3">
+            <div class="card-title-group flex-between">
+              <h4>Your Retailers Network Summary</h4>
+              <span class="status-badge-inline" id="chainDownlineCount">0 Retailers</span>
+            </div>
+            <div id="chainDownlineSummaryList" class="vault-results-container mt-2"></div>
+          </div>
+
+          <div class="terminal-card mt-3">
+            <div class="card-title-group flex-between">
+              <h4>My Support Tickets & Status</h4>
+              <button type="button" class="btn-mini-action" style="background:#ffe4e6; color:#e11d48;" onclick="openComplaintModal()">+ New Ticket</button>
+            </div>
+            <div id="distMyTicketsList" class="vault-results-container mt-2"></div>
+          </div>
+        </div>
+
+        <div id="chainWorkArea" style="display: none;">
+          <div class="form-navigation-strip">
+            <button type="button" class="btn-back-home" id="chainBackHomeBtn">← Back to Dashboard</button>
+            <span style="font-size: 13px; font-weight: 800;">Distributor Action Workspace</span>
+          </div>
+
+          <div class="terminal-card" id="chainTransferCard">
+            <h4>Send Coupons to Approved Retailer</h4>
+            <form id="chainTransferForm" class="mt-3">
+              <div class="grid-two">
+                <div class="input-group"><label>Select Retailer *</label><select id="chainDownlineSelect" required></select></div>
+                <div class="input-group"><label>Number of Coupons (Pcs) *</label><input type="number" id="chainTransferAmt" min="1" required></div>
+              </div>
+              <button type="submit" class="btn-primary-action w-full mt-2">Send Coupon Stock</button>
+            </form>
+          </div>
+
+          <div class="terminal-card" id="chainCreateUserCard" style="display: none;">
+            <h4>Register New Retailer (All Fields Required • Starts as KYC Pending)</h4>
+            <form id="chainCreateUserForm" class="mt-3">
+              <div class="grid-two">
+                <div class="input-group"><label>Legal Name *</label><input type="text" id="chainNewName" required minlength="3"></div>
+                <div class="input-group"><label>WhatsApp Mobile *</label><input type="tel" id="chainNewPhone" maxlength="10" required pattern="[0-9]{10}"></div>
+              </div>
+              <div class="grid-two">
+                <div class="input-group"><label>Email ID *</label><input type="email" id="chainNewEmail" required></div>
+                <div class="input-group"><label>ID Number *</label><input type="text" id="chainNewAadhaar" maxlength="12" required pattern="[0-9]{12}"></div>
+              </div>
+              <div class="input-group"><label>PAN Card Number *</label><input type="text" id="chainNewPan" maxlength="10" required class="font-mono" style="text-transform:uppercase;"></div>
+              <button type="submit" class="btn-primary-action w-full mt-2">Submit</button>
+            </form>
+          </div>
+
+          <div class="terminal-card" id="chainDirectoryCard" style="display: none;">
+            <div class="card-title-group flex-between"><h4>My Retailers Directory</h4></div>
+            <div id="chainFullDirectoryList" class="vault-results-container mt-2"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ================= 3. OFFICER DASHBOARD ================= -->
+  <div id="appContainer" class="enterprise-portal-shell" style="display: none;">
+    <aside class="portal-sidebar" id="officerSidebar">
+      <div>
+        <div class="sidebar-brand-header">
+          <div class="sidebar-logo-icon" id="offSidebarLogo">O</div>
+          <div class="sidebar-brand-info">
+            <strong class="dynamic-app-brand-name">BISWAS ENTERPRISE</strong>
+            <span>Officer Console</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav-menu" id="officerSidebarNav">
+          <div class="sidebar-section-label">OPERATIONS</div>
+          <button type="button" class="sidebar-nav-item active" onclick="closeMobileSidebars(); returnOfficerHome()">
+            <span class="nav-icon">📊</span> Dashboard Home
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('coupon-req-view', 'Coupon Requests & Manual Approval')">
+            <span class="nav-icon">🎫</span> Coupon Requests
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openPsaFormEditorModal()">
+            <span class="nav-icon">🖼️</span> PSA Photo & Sign Tool
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('inbox-view', 'PAN Applications Queue')">
+            <span class="nav-icon">📥</span> PAN Applications Queue
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('distributors-view', 'Distributor Directory')">
+            <span class="nav-icon">🏢</span> Distributor List
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('retailers-view', 'Retailer List & Optional Mapping')">
+            <span class="nav-icon">🏪</span> Retailer List & Mapping
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('network-view', 'Create ID & Issue Coupons')">
+            <span class="nav-icon">➕</span> Create ID & Coupons
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('channel-reg-view', 'Channel Registrations')">
+            <span class="nav-icon">📝</span> Channel Registrations
+          </button>
+
+          <div class="sidebar-section-label">SYSTEM & AUDIT</div>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('activity-view', 'Live Activity & Audit Log')">
+            <span class="nav-icon">📡</span> Live Activity Log
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('officers-mgmt-view', 'Officer Team & Roles')">
+            <span class="nav-icon">👮</span> Officer Team
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('complaint-view', 'Support & Complaints')">
+            <span class="nav-icon">📢</span> Support Tickets
+          </button>
+          <button type="button" class="sidebar-nav-item" onclick="closeMobileSidebars(); openOfficerPane('settings-view', 'System Config, Razorpay & Logo')">
+            <span class="nav-icon">⚙️</span> Config, Razorpay & Logo
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer-box">
+        <div class="sidebar-user-chip">
+          <div class="sidebar-avatar">O</div>
+          <div class="sidebar-user-meta">
+            <strong id="offSidebarUserName">Debajit Biswas</strong>
+            <span>AUTHORIZED OFFICER</span>
+          </div>
+        </div>
+        <button type="button" class="btn-secondary-action w-full instant-logout-btn" style="background:#1e293b; color:#f87171; border-color:#334155;">Secure Logout</button>
+      </div>
+    </aside>
+
+    <div class="portal-main-content">
+      <div class="global-notice-strip no-print">
+        <span class="notice-badge">BROADCAST</span>
+        <marquee id="officerNoticeMarquee" scrollamount="4">System Notice Active</marquee>
+      </div>
+
+      <header class="portal-top-header no-print">
+        <div class="header-left-group">
+          <button type="button" class="mobile-menu-toggle" onclick="toggleMobileSidebar('officerSidebar')">☰</button>
+          <div class="header-page-title">
+            <h2 id="officerTitleDisplay">Debajit Biswas (Super Officer)</h2>
+            <span>Enterprise Operations & Approval Desk</span>
+          </div>
+        </div>
+        <div class="flex-align-center">
+          <button type="button" class="btn-nav-icon" onclick="openPsaFormEditorModal()" title="PSA Photo & Signature Tool" style="width:auto; padding:0 12px; font-size:11px; font-weight:700; gap:6px; background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe;">
+            PSA Photo & Sign
+          </button>
+          <button type="button" class="btn-nav-icon" onclick="downloadDistributorOfflineForm()" title="Download Offline Distributor Form" style="width:auto; padding:0 12px; font-size:11px; font-weight:700; gap:6px; background:#ecfdf5; color:#059669; border-color:#a7f3d0;">
+            Offline Dist Form
+          </button>
+          <button type="button" class="btn-nav-icon" onclick="syncFromGoogleSheets()" title="Sync Cloud Data">🔄</button>
+          <div class="wallet-badge-pill" style="background: #eff6ff; border-color: #bfdbfe; color: #1e40af;">
+            <span>Stock:</span>
+            <strong class="font-mono">UNLIMITED</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="portal-workspace-body">
+        <div id="homeAppView" class="no-print">
+          <div class="kpi-stats-grid">
+            <div class="kpi-stat-card">
+              <div class="kpi-stat-info"><span>Total Distributors</span><strong id="offKpiDistCount">0</strong></div>
+              <div class="kpi-stat-icon bg-blue">🏢</div>
+            </div>
+            <div class="kpi-stat-card">
+              <div class="kpi-stat-info"><span>Total Retailers</span><strong id="offKpiRetCount">0</strong></div>
+              <div class="kpi-stat-icon bg-amber">🏪</div>
+            </div>
+            <div class="kpi-stat-card">
+              <div class="kpi-stat-info"><span>Pending Approvals</span><strong id="offKpiPendingCount" class="text-danger">0</strong></div>
+              <div class="kpi-stat-icon bg-purple">⏳</div>
+            </div>
+            <div class="kpi-stat-card">
+              <div class="kpi-stat-info"><span>PAN Applications</span><strong id="offKpiAppsCount">0</strong></div>
+              <div class="kpi-stat-icon bg-green">📥</div>
+            </div>
+          </div>
+
+          <div class="app-grid-section-title">MANAGEMENT ENGINES</div>
+          <div class="portal-boxed-grid" id="officerEnginesGrid"></div>
+
+          <div class="terminal-card mt-3">
+            <div class="flex-between" style="flex-wrap:wrap; gap:10px;">
+              <div>
+                <h4 style="color:#1e40af;">Distributor Offline KYC & Verification Form</h4>
+                <p class="text-secondary mt-1">Download or print the professional Distributor onboarding form (Passport Photo, Shop Ownership, Annual Income & Hardware checklist).</p>
+              </div>
+              <button type="button" class="btn-primary-action" onclick="downloadDistributorOfflineForm()">Download / Print Offline Form</button>
+            </div>
+          </div>
+
+          <div class="terminal-card mt-3">
+            <h4 style="color:var(--primary-accent);">PIN Code Availability Checker (Distributor Zone)</h4>
+            <p class="text-secondary mt-1">Check whether any 6-digit PIN code is vacant or currently occupied by an active Distributor.</p>
+            <div class="search-input-wrap mt-2">
+              <input type="text" id="offHomeCheckPinInput" maxlength="6" placeholder="Enter 6-digit PIN (e.g. 735305)" class="font-mono font-bold">
+              <button type="button" class="btn-primary-action" onclick="verifyPincodeAvailability('offHomeCheckPinInput', 'offHomeCheckPinResult')">Check PIN Status</button>
+            </div>
+            <div id="offHomeCheckPinResult" class="mt-2" style="font-size:12px;"></div>
+          </div>
+
+          <div class="terminal-card mt-3">
+            <div class="card-title-group flex-between">
+              <h4>Live Portal Activity Feed</h4>
+              <button type="button" class="btn-mini-action" onclick="syncFromGoogleSheets()">Refresh</button>
+            </div>
+            <div id="officerHomeActivityList" class="vault-results-container mt-2"></div>
+          </div>
+        </div>
+
+        <!-- OFFICER WORKSPACES -->
+        <div id="serviceWorkspaceArea" style="display: none;">
+          <div class="form-navigation-strip no-print">
+            <button type="button" class="btn-back-home" id="backToHomeBtn">← Back to Home</button>
+            <span class="active-service-title" id="activeServiceTitle" style="font-size: 13px; font-weight: 800; color: var(--text-primary);">Workspace</span>
+          </div>
+
+          <!-- Coupon Requests & Manual Approval View -->
+          <div id="coupon-req-view" class="service-screen-pane">
+            <div class="terminal-card">
+              <div class="card-title-group flex-between">
+                <h4>Direct Coupon Requests (Razorpay & Manual Approval)</h4>
+                <span class="status-badge-inline" id="couponReqCountBadge">0 Requests</span>
+              </div>
+              <p class="text-secondary mt-1">Approve or reject coupon requests manually, or view completed Razorpay coupon allocations.</p>
+              <div id="officerCouponRequestsList" class="vault-results-container mt-2"></div>
+            </div>
+          </div>
+
+          <div id="inbox-view" class="service-screen-pane">
+            <div class="terminal-card" style="border:1.5px solid #86efac;">
+              <h4 style="color:#15803d;">Allocate Direct Public Coupons (By Mobile Number)</h4>
+              <form id="publicMobileCouponForm" class="mt-2">
+                <div class="grid-two">
+                  <div class="input-group"><label>WhatsApp Mobile *</label><input type="tel" id="pubCouponMobileInput" maxlength="10" required class="font-mono"></div>
+                  <div class="input-group"><label>Coupons Count (Pcs) *</label><input type="number" id="pubCouponCountInput" min="1" required></div>
+                </div>
+                <button type="submit" class="btn-primary-action" style="background:#16a34a;">Assign Public Coupons</button>
+              </form>
+              <div id="publicCouponsListDisplay" class="mt-2"></div>
+            </div>
+
+            <div class="terminal-card mt-3">
+              <div class="card-title-group flex-between">
+                <h4>Incoming Applications (Form Details & Docs)</h4>
+                <button type="button" class="btn-mini-action" onclick="syncFromGoogleSheets()">Refresh Queue</button>
+              </div>
+              <div id="adminAppQueueContainer" class="vault-results-container mt-2"></div>
+            </div>
+          </div>
+
+          <div id="distributors-view" class="service-screen-pane">
+            <div class="terminal-card">
+              <div class="card-title-group flex-between">
+                <h4>Distributor Directory (Search, View Retailers, Login & Manage)</h4>
+                <span class="status-badge-inline" id="distCountBadge">0 Distributors</span>
+              </div>
+              <p class="text-secondary mt-1">Accounts become <b>INACTIVE</b> after 90 days of no activity. Click <b>Activate</b> to unlock or <b>Login</b> to open their account directly.</p>
+              
+              <div class="input-group mt-2">
+                <input type="text" id="distSearchInput" class="search-input" placeholder="Search Distributor by ID, Name, Mobile, or PIN Code..." oninput="renderOfficerDistributorList()">
+              </div>
+
+              <div id="officerDistributorListContainer" class="vault-results-container mt-2"></div>
+            </div>
+          </div>
+
+          <div id="retailers-view" class="service-screen-pane">
+            <div class="terminal-card" style="border: 1.5px solid #93c5fd; margin-bottom: 14px;">
+              <h4 style="color: #1d4ed8;">Optional Retailer → Distributor Mapping Tool</h4>
+              <p class="text-secondary mt-1">Only map a Retailer to a Distributor if requested. By default, Retailers stay under Direct Admin.</p>
+              <form id="quickMapRetailerForm" class="mt-3">
+                <div class="grid-two">
+                  <div class="input-group">
+                    <label>Select Retailer ID *</label>
+                    <select id="mapRetailerSelect" required></select>
+                  </div>
+                  <div class="input-group">
+                    <label>Assign / Remove Distributor Mapping *</label>
+                    <select id="mapDistributorSelect" required></select>
+                  </div>
+                </div>
+                <button type="submit" class="btn-primary-action w-full">Update Retailer Mapping</button>
+              </form>
+            </div>
+
+            <div class="terminal-card">
+              <div class="card-title-group flex-between">
+                <h4>Retailer Directory (Search, Activate, Login, Map & Manage)</h4>
+                <span class="status-badge-inline" id="retCountBadge">0 Retailers</span>
+              </div>
+              <p class="text-secondary mt-1">Accounts become <b>INACTIVE</b> after 90 days of no activity. Click <b>Activate</b> to reactivate or <b>Login</b> to open their account directly.</p>
+              
+              <div class="input-group mt-2">
+                <input type="text" id="retSearchInput" class="search-input" placeholder="Search Retailer by ID, Name, Mobile, or PAN..." oninput="renderOfficerRetailerList()">
+              </div>
+
+              <div id="officerRetailerListContainer" class="vault-results-container mt-2"></div>
+            </div>
+          </div>
+
+          <div id="activity-view" class="service-screen-pane">
+            <div class="terminal-card">
+              <div class="card-title-group flex-between">
+                <h4>Complete Portal Activity & Audit Log</h4>
+                <button type="button" class="btn-mini-action" onclick="syncFromGoogleSheets()">Sync Cloud</button>
+              </div>
+              <div id="officerFullActivityList" class="vault-results-container mt-2" style="max-height: 440px;"></div>
+            </div>
+          </div>
+
+          <div id="officers-mgmt-view" class="service-screen-pane">
+            <div class="terminal-card">
+              <h4>Appoint Sub-Officer & Delegate Specific Duties</h4>
+              <form id="createOfficerForm" class="mt-3">
+                <div class="grid-three">
+                  <div class="input-group"><label>Officer Full Name *</label><input type="text" id="newOfficerName" required></div>
+                  <div class="input-group"><label>WhatsApp Mobile *</label><input type="tel" id="newOfficerPhone" maxlength="10" required></div>
+                  <div class="input-group"><label>Email ID *</label><input type="email" id="newOfficerEmail" required></div>
+                </div>
+                <div class="input-group" style="background:#f8fafc; padding:12px; border-radius:8px; border:1px solid var(--border-color);">
+                  <label style="color:var(--primary-accent); font-weight:800; margin-bottom:8px;">Grant Authorized Duties & Work Permissions:</label>
+                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px;">
+                    <label><input type="checkbox" name="officerPerms" value="PERM_CHANNEL_REG" checked> Approve / Reject Channel IDs</label>
+                    <label><input type="checkbox" name="officerPerms" value="PERM_PAN_PROCESS" checked> Process PAN Applications & View Docs</label>
+                    <label><input type="checkbox" name="officerPerms" value="PERM_NETWORK_COUPONS"> Manage IDs, KYC & Coupons</label>
+                    <label><input type="checkbox" name="officerPerms" value="PERM_COMPLAINTS"> Technical Support & Complaints</label>
+                    <label><input type="checkbox" name="officerPerms" value="PERM_SETTINGS"> Config, Razorpay & Logo</label>
+                  </div>
+                </div>
+                <button type="submit" class="btn-primary-action w-full mt-2">Appoint Officer & Dispatch Credentials</button>
+              </form>
+            </div>
+            <div class="terminal-card mt-3">
+              <h4>Active Sub-Officers Directory</h4>
+              <div id="officersListContainer" class="vault-results-container mt-2"></div>
+            </div>
+          </div>
+
+          <div id="channel-reg-view" class="service-screen-pane">
+            <div class="terminal-card">
+              <div class="card-title-group flex-between">
+                <h4>Channel ID Registrations (View Form & Uploaded KYC)</h4>
+                <span class="status-badge-inline" id="channelRegCountBadge">0 Records</span>
+              </div>
+              <p class="text-secondary mt-1">Review applicant requests and approve/reject IDs.</p>
+              <div id="channelRegListContainer" class="vault-results-container mt-2"></div>
+            </div>
+          </div>
+
+          <div id="network-view" class="service-screen-pane">
+            <div class="terminal-card">
+              <h4>Issue Coupons to Approved Distributor or Retailer</h4>
+              <form id="officerTopupForm" class="mt-3">
+                <div class="grid-two">
+                  <div class="input-group"><label>Select Agent *</label><select id="officerTopupUserSelect" required></select></div>
+                  <div class="input-group"><label>Coupons Count *</label><input type="number" id="officerTopupAmt" min="1" required></div>
+                </div>
+                <button type="submit" class="btn-primary-action w-full mt-2">Transfer Coupon Stock</button>
+              </form>
+            </div>
+
+            <div class="terminal-card mt-3">
+              <div class="flex-between">
+                <h4>Register Distributor or Retailer (Creating a Distributor Also Creates a Linked Retailer ID)</h4>
+                <button type="button" class="btn-mini-action" style="background:#eff6ff; color:#1d4ed8;" onclick="downloadDistributorOfflineForm()">Download Offline Form</button>
+              </div>
+              <form id="officerCreateUserForm" class="mt-3">
+                <div class="grid-two">
+                  <div class="input-group">
+                    <label>Role *</label>
+                    <select id="offNewUserRole" onchange="toggleOfficerTerritoryInputs()" required>
+                      <option value="DISTRIBUTOR">Distributor (D... + Auto Linked Retailer R...)</option>
+                      <option value="RETAILER">Retailer (R...)</option>
+                    </select>
+                  </div>
+                  <div class="input-group" id="offTerritoryBox">
+                    <label>Allocated PIN Codes (Required for Distributor) *</label>
+                    <input type="text" id="offTerritoryValue" placeholder="e.g. 735305, 735101" class="font-mono" required>
+                  </div>
+                </div>
+                <div class="grid-two">
+                  <div class="input-group"><label>Legal Name *</label><input type="text" id="offNewUserName" required minlength="3"></div>
+                  <div class="input-group"><label>WhatsApp Mobile (10 Digits) *</label><input type="tel" id="offNewUserPhone" maxlength="10" required pattern="[0-9]{10}"></div>
+                </div>
+                <div class="grid-two">
+                  <div class="input-group"><label>Email ID *</label><input type="email" id="offNewUserEmail" required></div>
+                  <div class="input-group"><label>ID Number (12 Digits) *</label><input type="text" id="offNewUserAadhaar" maxlength="12" required pattern="[0-9]{12}"></div>
+                </div>
+                <div class="grid-two">
+                  <div class="input-group"><label>PAN Card Number (10 Chars) *</label><input type="text" id="offNewUserPan" maxlength="10" required class="font-mono" style="text-transform:uppercase;"></div>
+                  <div class="input-group" id="offParentDistBox" style="display:none;">
+                    <label>Distributor Mapping (Optional • Default Direct Admin)</label>
+                    <select id="offNewUserParentSelect"></select>
+                  </div>
+                </div>
+                <div class="input-group" id="offOfflineFormUploadBox">
+                  <label>Upload Filled Distributor Offline KYC Form (Optional)</label>
+                  <input type="file" id="offNewDistOfflineFormFile" accept="image/jpeg,image/png,application/pdf" onchange="validateDocFileSize(this)">
+                </div>
+                <button type="submit" class="btn-primary-action w-full mt-2">Submit</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="settings-view" class="service-screen-pane">
+            <!-- 1. Separate Google Sheet Database Config -->
+            <div class="terminal-card" style="border: 1.5px solid #059669;">
+              <h4 style="color: #065f46;">Google Sheet Database Endpoint</h4>
+              <p class="text-secondary mt-1">Paste your Google Sheet Web App URL to sync database and records.</p>
+              <form id="googleSheetsConfigForm" class="mt-3">
+                <div class="input-group">
+                  <label>Google Sheet Web App URL *</label>
+                  <input type="url" id="setAppsScriptUrl" placeholder="https://script.google.com/macros/s/.../exec" class="font-mono" required>
+                </div>
+                <div class="grid-two">
+                  <button type="submit" class="btn-primary-action" style="background:#059669;">Save Sheet URL</button>
+                  <button type="button" class="btn-secondary-action" onclick="syncFromGoogleSheets()">Sync Now</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- 2. Separate Razorpay Payment Link Config -->
+            <div class="terminal-card mt-3" style="border: 1.5px solid #2563eb;">
+              <h4 style="color: #1d4ed8;">Razorpay Payment Link Configuration</h4>
+              <p class="text-secondary mt-1">Paste your Razorpay Payment Page / Link URL here for direct coupon payments & auto-approval.</p>
+              <form id="razorpayLinkSettingsForm" class="mt-3">
+                <div class="input-group">
+                  <label>Razorpay Payment Link URL *</label>
+                  <input type="url" id="setRazorpayPaymentLink" placeholder="https://rzp.io/l/your-payment-link" class="font-mono" required>
+                </div>
+                <button type="submit" class="btn-primary-action w-full">Save Razorpay Link</button>
+              </form>
+            </div>
+
+            <!-- 3. Separate WhatsApp Queue Config -->
+            <div class="terminal-card mt-3" style="border: 1.5px solid #16a34a;">
+              <h4 style="color: #15803d;">WhatsApp Queue Endpoint</h4>
+              <p class="text-secondary mt-1">Optional endpoint URL for WhatsApp queue logging.</p>
+              <form id="whatsappQueueLinkForm" class="mt-3">
+                <div class="input-group">
+                  <label>WhatsApp Queue URL</label>
+                  <input type="url" id="setWhatsappApiUrl" placeholder="https://script.google.com/macros/s/.../exec" class="font-mono">
+                </div>
+                <button type="submit" class="btn-primary-action w-full" style="background:#16a34a;">Save WhatsApp Queue Link</button>
+              </form>
+            </div>
+
+            <div class="terminal-card mt-3" style="border: 1.5px solid #2563eb;">
+              <h4 style="color: #1d4ed8;">Manual App Name & Logo Branding</h4>
+              <p class="text-secondary mt-1">Customize your website & app brand name, tagline, and upload your custom logo image.</p>
+              <form id="brandLogoSettingsForm" class="mt-3">
+                <div class="grid-two">
+                  <div class="input-group">
+                    <label>App / Website Brand Name *</label>
+                    <input type="text" id="setBrandTitle" placeholder="e.g. BISWAS DIGITAL" required>
+                  </div>
+                  <div class="input-group">
+                    <label>Brand Subtitle / Tagline *</label>
+                    <input type="text" id="setBrandSub" placeholder="e.g. Enterprise Smart Portal" required>
+                  </div>
+                </div>
+                <div class="grid-two">
+                  <div class="input-group">
+                    <label>Upload App Logo Image (PNG/JPG)</label>
+                    <input type="file" id="setBrandLogoFile" accept="image/*" onchange="previewManualBrandLogo(this)">
+                  </div>
+                  <div class="input-group">
+                    <label>Or Paste Logo Image URL (Optional)</label>
+                    <input type="text" id="setBrandLogoUrl" placeholder="https://example.com/logo.png">
+                  </div>
+                </div>
+                <div id="brandLogoPreviewBox" style="margin-bottom:12px; display:flex; align-items:center; gap:10px; background:#f8fafc; padding:10px; border-radius:8px; border:1px solid var(--border-color);">
+                  <img id="brandLogoPreviewImg" src="" alt="Logo Preview" style="width:42px; height:42px; border-radius:10px; object-fit:cover; display:none;">
+                  <span id="brandLogoPreviewTxt" class="text-secondary">Current Logo: Default Shield Icon</span>
+                </div>
+                <button type="submit" class="btn-primary-action w-full">Save App Name & Logo</button>
+              </form>
+            </div>
+
+            <div class="terminal-card mt-3">
+              <h4 style="color: var(--primary-accent);">Manage Available Registration IDs & App Names</h4>
+              <form id="addCustomIdForm" class="mt-3">
+                <div class="grid-two">
+                  <div class="input-group"><label>Select ID Code *</label><input type="text" id="newIdCode" placeholder="e.g. UTI_PSA" required class="font-mono"></div>
+                  <div class="input-group"><label>App Name *</label><input type="text" id="newAppName" placeholder="e.g. UTIITSL PSA Portal App" required></div>
+                </div>
+                <button type="submit" class="btn-mini-action" style="background:#dbeafe; color:#2563eb; padding:8px 12px; font-weight:700;">+ Add ID to Registration Form</button>
+              </form>
+              <div id="officerConfiguredIdList" class="mt-2" style="display:flex; flex-direction:column; gap:6px;"></div>
+            </div>
+
+            <div class="terminal-card mt-3">
+              <h4>Website Content, APK Download Link & Business WhatsApp</h4>
+              <form id="globalSettingsForm" class="mt-3">
+                <div class="input-group">
+                  <label style="color:#2563eb; font-weight:700;">Android APK Download URL / File Name</label>
+                  <input type="text" id="setApkDownloadUrl" placeholder="BiswasDigital.apk" class="font-mono">
+                </div>
+                <div class="input-group"><label>Website Hero Title</label><input type="text" id="setHeroTitle"></div>
+                <div class="input-group"><label>Website Hero Description</label><textarea id="setHeroDesc" rows="2" class="font-mono"></textarea></div>
+                <div class="input-group"><label>Live Running Notice</label><textarea id="setBroadcastNote" rows="2" class="font-mono"></textarea></div>
+                <div class="grid-three">
+                  <div class="input-group"><label>Business WhatsApp Mobile</label><input type="text" id="setBusinessWhatsApp" class="font-mono"></div>
+                  <div class="input-group"><label>Company Phone</label><input type="text" id="setCompanyPhone"></div>
+                  <div class="input-group"><label>Company Email</label><input type="email" id="setCompanyEmail"></div>
+                </div>
+                <button type="submit" class="btn-primary-action w-full mt-2">Publish Changes</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="complaint-view" class="service-screen-pane">
+            <div class="terminal-card">
+              <h4>Support Inquiries & Tickets</h4>
+              <div id="officerComplaintListContainer" class="vault-results-container mt-2"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ================= DISTRIBUTOR'S DOWNLINE RETAILERS INSPECTOR MODAL ================= -->
+  <div class="modal-overlay no-print" id="distRetailersInspectorModal">
+    <div class="modal-box text-left" style="max-width: 640px; max-height: 90vh; overflow-y: auto;">
+      <div class="modal-header flex-between">
+        <div>
+          <span class="modal-badge" style="background:#eff6ff; color:#2563eb;">Network Inspector</span>
+          <h3 id="inspectorDistTitle" style="font-size: 16px; margin-top: 4px;">Distributor Retailers</h3>
+        </div>
+        <button type="button" class="btn-mini-action" onclick="closeDistRetailersModal()">Close</button>
+      </div>
+      <div id="inspectorDistMetaBox" style="background:#f8fafc; border:1px solid var(--border-color); padding:10px 14px; border-radius:10px; font-size:12px; margin-top:10px;"></div>
+      <div id="inspectorDistRetailersList" class="mt-3" style="display:flex; flex-direction:column; gap:10px;"></div>
+    </div>
+  </div>
+
+  <!-- ================= LOGIN MODAL ================= -->
+  <div class="modal-overlay no-print" id="loginModal">
+    <div class="modal-box text-left" style="max-width: 400px;">
+      <div class="modal-header flex-between">
+        <div><span class="modal-badge">Terminal Authentication</span><h3 style="font-size: 17px; margin-top: 4px;">Sign In to Enterprise</h3></div>
+        <button type="button" class="btn-mini-action" onclick="closeLoginModal()">✕</button>
+      </div>
+      <p class="text-secondary mt-1">Sign in using your User ID or 10-digit Mobile Number.</p>
+      <form id="singleLoginForm" autocomplete="off" class="mt-3">
+        <div class="input-group">
+          <label>User ID or Mobile Number *</label>
+          <input type="text" id="loginUserId" placeholder="Enter User ID or 10-digit Mobile" required class="font-mono">
+        </div>
+        <div class="input-group">
+          <label>Password *</label>
+          <div class="pass-wrapper">
+            <input type="password" id="loginPassword" placeholder="Enter Password" required>
+            <button type="button" class="btn-toggle-eye" onclick="togglePassVisibility('loginPassword')">👁️</button>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary-action w-full mt-3">Authorize Access</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= FIRST-TIME MANDATORY PASSWORD CHANGE MODAL ================= -->
+  <div class="modal-overlay no-print" id="forcePasswordModal">
+    <div class="modal-box text-left" style="max-width: 380px;">
+      <div class="modal-header"><span class="modal-badge" style="background:#fef3c7; color:#b45309;">First Login Security</span><h3 style="font-size: 16px; margin-top: 4px;">Set New Password</h3></div>
+      <p class="text-secondary mt-1">You are logging in for the first time. Please set a new password to continue.</p>
+      <form id="forcePasswordForm" class="mt-3">
+        <input type="hidden" id="forceUserIdDisplay">
+        <div class="input-group"><label>New Password *</label><input type="password" id="forceNewPass" placeholder="Min 5 characters" required minlength="5"></div>
+        <div class="input-group"><label>Confirm New Password *</label><input type="password" id="forceConfirmPass" placeholder="Re-enter new password" required minlength="5"></div>
+        <button type="submit" class="btn-primary-action w-full mt-2">Save New Password & Continue</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= UNIFIED REJECTION REASON MODAL ================= -->
+  <div class="modal-overlay no-print" id="rejectionReasonModal">
+    <div class="modal-box text-left" style="max-width: 420px;">
+      <div class="modal-header flex-between">
+        <div><span class="modal-badge" style="background:#fee2e2; color:#dc2626;">Rejection Confirmation</span><h3 id="rejectModalTitle" style="font-size: 16px; margin-top: 4px;">Reject Request</h3></div>
+        <button type="button" class="btn-mini-action" onclick="closeRejectionModal()">✕</button>
+      </div>
+      <form id="rejectionReasonForm" class="mt-3">
+        <input type="hidden" id="rejectTargetType">
+        <input type="hidden" id="rejectTargetId">
+        <div class="input-group"><label>Target ID / Reference</label><input type="text" id="rejectTargetDisplay" readonly class="locked-readonly-input font-mono"></div>
+        <div class="input-group"><label>Reason for Rejection (Mandatory) *</label><textarea id="rejectReasonInput" rows="3" placeholder="Write clearly why this is being rejected..." required></textarea></div>
+        <div class="flex-between mt-3">
+          <button type="button" class="btn-secondary-action" onclick="closeRejectionModal()">Cancel</button>
+          <button type="submit" class="btn-primary-action" style="background:#dc2626;">Confirm Reject & Notify</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay no-print" id="editUpgradeUserModal">
+    <div class="modal-box text-left" style="max-width: 480px;">
+      <div class="modal-header flex-between">
+        <div><span class="modal-badge" style="background:#eff6ff; color:#2563eb;">Account Management</span><h3 style="font-size: 16px; margin-top: 4px;">Edit Role / Status / Mapping</h3></div>
+        <button type="button" class="btn-mini-action" onclick="closeEditUpgradeModal()">✕</button>
+      </div>
+      <form id="editUpgradeUserForm" class="mt-3">
+        <input type="hidden" id="editTargetUserId">
+        <div class="grid-two">
+          <div class="input-group"><label>User ID</label><input type="text" id="editUserIdDisp" readonly class="locked-readonly-input font-mono"></div>
+          <div class="input-group"><label>Account Role</label><select id="editUserRoleSelect" onchange="toggleEditModalPinBox()"><option value="RETAILER">Retailer</option><option value="DISTRIBUTOR">Distributor (Upgrade)</option></select></div>
+        </div>
+        <div id="editPinCodeGroup" class="input-group" style="display:none;"><label>Distributor Allocated PIN Codes</label><input type="text" id="editUserPins" class="font-mono font-bold"></div>
+        <div id="editUplineDistGroup" class="input-group">
+          <label style="color:#1d4ed8; font-weight:700;">Optional Upline Distributor Mapping</label>
+          <select id="editUserUplineSelect"></select>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>Legal Name</label><input type="text" id="editUserName"></div>
+          <div class="input-group"><label>WhatsApp Mobile</label><input type="tel" id="editUserPhone" maxlength="10"></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>Email ID</label><input type="email" id="editUserEmail"></div>
+          <div class="input-group"><label>PAN Card Number</label><input type="text" id="editUserPan" maxlength="10" class="font-mono"></div>
+        </div>
+        <div class="input-group"><label>Account Status</label><select id="editUserKycSelect"><option value="APPROVED">APPROVED (Active & Unlocked)</option><option value="KYC_PENDING">KYC_PENDING (Locked)</option><option value="INACTIVE">INACTIVE (Locked due to Inactivity)</option><option value="REJECTED">REJECTED (Blocked)</option></select></div>
+        <button type="submit" class="btn-primary-action w-full mt-2">Save & Apply Account Update</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= PAN CORRECTION MODAL ================= -->
+  <div class="modal-overlay no-print" id="panCorrectionModal">
+    <div class="modal-box text-left" style="max-width: 800px; max-height: 92vh; overflow-y: auto;">
+      <div class="modal-header flex-between">
+        <div><span class="modal-badge" style="background:#f3e8ff; color:#7c3aed;">Correction Terminal</span><h3 style="font-size: 18px; margin-top: 4px; font-weight: 800;">SMART NSDL / UTIITSL CORRECTION FORM</h3></div>
+        <button type="button" class="btn-mini-action" onclick="closePanCorrectionModal()">Close</button>
+      </div>
+      <div id="publicCorrMobileCheckSection" style="display:none; background:#eff6ff; padding:14px; border-radius:8px; border:1px solid #bfdbfe; margin-top:12px;">
+        <h4 style="color:#1e40af; font-size:13px; margin-bottom:4px;">Direct Customer Coupon Verification</h4>
+        <div class="search-input-wrap mt-2">
+          <input type="tel" id="publicCorrVerifyMobile" placeholder="Enter 10-digit Mobile Number" maxlength="10" class="font-mono font-bold">
+          <button type="button" class="btn-primary-action" onclick="verifyPublicCorrMobileCoupon()">Verify Balance</button>
+        </div>
+        <div id="publicCorrCouponStatusText" class="mt-2" style="font-size:11px; font-weight:700;"></div>
+      </div>
+      <form id="panCorrectionForm" class="mt-3">
+        <input type="hidden" id="corrContext" value="PUBLIC">
+        <div class="service-tabs">
+          <label class="tab-item"><input type="radio" name="corrPortalChoice" value="NSDL" checked onchange="onCorrPortalChanged()"><span class="tab-pill">SMART NSDL CORRECTION</span></label>
+          <label class="tab-item"><input type="radio" name="corrPortalChoice" value="UTIITSL" onchange="onCorrPortalChanged()"><span class="tab-pill">UTIITSL CORRECTION</span></label>
+        </div>
+
+        <h5 class="form-sub-header">PAN Details</h5>
+        <div class="grid-three">
+          <div class="input-group"><label>PAN Number *</label><input type="text" id="corrPanNumber" maxlength="10" required class="font-mono font-bold" style="text-transform: uppercase;"></div>
+          <div class="input-group"><label>Title *</label><select id="corrTitle" required><option value="Shri (Male)">Shri (Male)</option><option value="Smt (Female)">Smt (Female)</option><option value="Kumari (Female)">Kumari (Female)</option></select></div>
+          <div class="input-group"><label>Applicant Full Name *</label><input type="text" id="corrApplicantName" required style="text-transform: uppercase;"></div>
+        </div>
+        <h5 class="form-sub-header mt-3">Personal Information</h5>
+        <div class="grid-two">
+          <div class="input-group"><label>Date of Birth *</label><input type="date" id="corrDob" required></div>
+          <div class="input-group"><label>Gender *</label><select id="corrGender" required><option value="MALE">Male</option><option value="FEMALE">Female</option><option value="TRANSGENDER">Transgender</option></select></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>Father's Full Name *</label><input type="text" id="corrFatherName" required style="text-transform: uppercase;"></div>
+          <div class="input-group"><label id="corrMotherLabel">Mother's Full Name (Mandatory for NSDL) *</label><input type="text" id="corrMotherName" required style="text-transform: uppercase;"></div>
+        </div>
+        <h5 class="form-sub-header mt-3">Contact & ID</h5>
+        <div class="grid-three">
+          <div class="input-group"><label>Mobile Number *</label><input type="tel" id="corrMobile" maxlength="10" required class="font-mono"></div>
+          <div class="input-group"><label>Email ID *</label><input type="email" id="corrEmail" required></div>
+          <div class="input-group"><label>ID Number *</label><input type="text" id="corrAadhaar" maxlength="12" class="font-mono font-bold" required></div>
+        </div>
+        <h5 class="form-sub-header mt-3">Communication Address</h5>
+        <div class="input-group" style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid var(--border-color);">
+          <label style="color:var(--primary-accent); font-weight:700;">PIN Code (Type 6 Digits to Auto-fill Location) *</label>
+          <input type="text" id="corrPinCode" maxlength="6" placeholder="e.g. 735305" class="font-mono font-bold" oninput="handlePincodeLookup(this.value, 'corrState', 'corrDistrict', 'corrTown')" required>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>Flat / Door / Block No *</label><input type="text" id="corrFlatNo" required></div>
+          <div class="input-group"><label>Building / Village *</label><input type="text" id="corrBuilding" required></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>Street / Post Office *</label><input type="text" id="corrStreet" required></div>
+          <div class="input-group"><label>Area / Locality *</label><input type="text" id="corrArea" required></div>
+        </div>
+        <div class="grid-three">
+          <div class="input-group"><label>State *</label><input type="text" id="corrState" required></div>
+          <div class="input-group"><label>District *</label><input type="text" id="corrDistrict" required></div>
+          <div class="input-group"><label>Town / City *</label><input type="text" id="corrTown" required></div>
+        </div>
+        <h5 class="form-sub-header mt-3">Applicant Category</h5>
+        <div class="input-group">
+          <label>Select Category *</label>
+          <select id="corrCategorySelect" onchange="toggleRepresentativeAssessee()" required><option value="MAJOR">Major (Adult)</option><option value="MINOR">Minor (Below 18)</option></select>
+        </div>
+        <div id="representativeAssesseeBox" style="display:none; background:#eff6ff; border:1px solid #bfdbfe; padding:14px; border-radius:10px; margin-bottom:14px;">
+          <h5 style="color:#1e40af; font-size:12px; margin-bottom:8px; font-weight:800;">Representative Assessee (RA) Details</h5>
+          <div class="grid-two">
+            <div class="input-group"><label>Title *</label><select id="raTitle"><option value="SHRI">SHRI</option><option value="SMT">SMT</option><option value="KUMARI">KUMARI</option></select></div>
+            <div class="input-group"><label>(RA) Full Name *</label><input type="text" id="raFullName" class="ra-dynamic-req"></div>
+          </div>
+          <div class="grid-two">
+            <div class="input-group"><label>Address *</label><input type="text" id="raFlat" class="ra-dynamic-req"></div>
+            <div class="input-group"><label>Building / Village *</label><input type="text" id="raBuilding" class="ra-dynamic-req"></div>
+          </div>
+          <div class="grid-two">
+            <div class="input-group"><label>Road / Street *</label><input type="text" id="raStreet" class="ra-dynamic-req"></div>
+            <div class="input-group"><label>Area / Locality *</label><input type="text" id="raArea" class="ra-dynamic-req"></div>
+          </div>
+          <div class="grid-three">
+            <div class="input-group"><label>District *</label><input type="text" id="raDistrict" class="ra-dynamic-req"></div>
+            <div class="input-group"><label>State *</label><input type="text" id="raState" class="ra-dynamic-req"></div>
+            <div class="input-group"><label>Pincode *</label><input type="text" id="raPincode" maxlength="6" class="font-mono ra-dynamic-req"></div>
+          </div>
+        </div>
+        <h5 class="form-sub-header mt-3">Correction Details</h5>
+        <div class="correction-checkboxes-grid">
+          <label><input type="checkbox" name="corrOptions" value="CHANGE_NAME"> Change in Name</label>
+          <label><input type="checkbox" name="corrOptions" value="CORR_NAME"> Correction in Name</label>
+          <label><input type="checkbox" name="corrOptions" value="CORR_DOB"> DOB Correction</label>
+          <label><input type="checkbox" name="corrOptions" value="CORR_GENDER"> Gender Correction</label>
+          <label><input type="checkbox" name="corrOptions" value="CORR_FATHER"> Father Name Correction</label>
+          <label><input type="checkbox" name="corrOptions" value="CORR_ADDR"> Address Correction</label>
+          <label><input type="checkbox" name="corrOptions" value="CORR_PHOTO_SIGN"> Photo and Signature Change</label>
+        </div>
+        <h5 class="form-sub-header mt-3">Number of Documents & Proofs</h5>
+        <div class="grid-two">
+          <div class="input-group"><label>Select Document Count *</label><select id="corrDocCount" required><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
+          <div class="input-group"><label>Proof of Identity *</label><select class="locked-readonly-input" disabled><option selected>Identity Proof Copy</option></select></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>Proof of Address *</label><select class="locked-readonly-input" disabled><option selected>Address Proof Copy</option></select></div>
+          <div class="input-group"><label>Proof of DOB *</label><select id="corrProofDob" required class="dob-proof-dropdown"></select></div>
+        </div>
+        <h5 class="form-sub-header mt-3">Documents Upload (JPG & PDF Supported)</h5>
+        <div id="corrSpecBanner" style="background:#eff6ff; border:1px solid #bfdbfe; color:#1e40af; padding:8px 12px; border-radius:8px; font-size:11px; font-weight:700; margin-bottom:12px;">NSDL Spec: Photo 200×200px (≤50KB) | Signature 400×200px (≤50KB)</div>
+        <div class="grid-two">
+          <div class="input-group"><label>ID Front (JPG/PNG/PDF) *</label><input type="file" id="fileCorrAadhaarFront" accept="image/jpeg,image/png,application/pdf" required onchange="validateDocFileSize(this)"></div>
+          <div class="input-group"><label>ID Back [Optional]</label><input type="file" id="fileCorrAadhaarBack" accept="image/jpeg,image/png,application/pdf" onchange="validateDocFileSize(this)"></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>DOB Proof (JPG/PNG/PDF) *</label><input type="file" id="fileCorrDob" accept="image/jpeg,image/png,application/pdf" required onchange="validateDocFileSize(this)"></div>
+          <div class="input-group"><label id="lblCorrPhotoSpec">Photo *</label><input type="file" id="fileCorrPhoto" accept="image/jpeg,image/png" required onchange="previewAutoFormatStatus(this, 'CORR', 'PHOTO')"><span id="statusCorrPhoto" style="font-size:10px; font-weight:700; color:#059669;"></span></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label id="lblCorrSignSpec">Signature *</label><input type="file" id="fileCorrSign" accept="image/jpeg,image/png" required onchange="previewAutoFormatStatus(this, 'CORR', 'SIGN')"><span id="statusCorrSign" style="font-size:10px; font-weight:700; color:#059669;"></span></div>
+          <div class="input-group"><label>Other Proof (PAN Copy) *</label><input type="file" id="fileCorrPanCopy" accept="image/jpeg,image/png,application/pdf" required onchange="validateDocFileSize(this)"></div>
+        </div>
+        <button type="submit" id="btnSubmitCorrForm" class="btn-primary-action w-full mt-3" style="background: linear-gradient(135deg, #7c3aed, #6d28d9); padding: 14px;">Submit PAN Correction Application</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= NEW PAN MODAL ================= -->
+  <div class="modal-overlay no-print" id="unifiedPanModal">
+    <div class="modal-box text-left" style="max-width: 720px; max-height: 92vh; overflow-y: auto;">
+      <div class="modal-header flex-between">
+        <div><span class="modal-badge" id="panModalBadge" style="background:#ecfdf5; color:#065f46;">PAN Application Engine</span><h3 id="panModalTitle" style="font-size: 17px; margin-top: 4px;">New PAN Application Form (49A)</h3></div>
+        <button type="button" class="btn-mini-action" onclick="closeUnifiedPanModal()">Close</button>
+      </div>
+      <div id="publicPanMobileCheckSection" style="display:none; background:#eff6ff; padding:14px; border-radius:8px; border:1px solid #bfdbfe; margin-top:12px;">
+        <h4 style="color:#1e40af; font-size:13px; margin-bottom:4px;">Direct Customer Coupon Verification</h4>
+        <div class="search-input-wrap mt-2">
+          <input type="tel" id="publicPanVerifyMobile" placeholder="Enter 10-digit Mobile Number" maxlength="10" class="font-mono font-bold">
+          <button type="button" class="btn-primary-action" onclick="verifyPublicMobileCoupon()">Verify Balance</button>
+        </div>
+        <div id="publicCouponStatusText" class="mt-2" style="font-size:11px; font-weight:700;"></div>
+      </div>
+      <form id="comprehensivePanForm" class="mt-3" style="display:block;">
+        <input type="hidden" id="panSelectedPortal" value="NSDL">
+        <input type="hidden" id="panApplicantContext" value="RETAILER">
+        <div class="service-tabs" id="newPanPortalTabs" style="margin: 0 0 14px 0;">
+          <label class="tab-item" id="newPanTabNsdl"><input type="radio" name="unifiedPortalChoice" value="NSDL" checked onchange="onPanPortalRadioChanged()"><span class="tab-pill">SMART NSDL (No OTP/Biometric)</span></label>
+          <label class="tab-item" id="newPanTabUti"><input type="radio" name="unifiedPortalChoice" value="UTIITSL" onchange="onPanPortalRadioChanged()"><span class="tab-pill">UTIITSL OFFLINE PAN</span></label>
+        </div>
+
+        <h5 class="form-sub-header mt-3">1. Personal Information</h5>
+        <div class="grid-two">
+          <div class="input-group"><label>Applicant Full Name *</label><input type="text" id="panApplicantName" required></div>
+          <div class="input-group"><label>Father's Legal Name *</label><input type="text" id="panFatherName" required></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label id="panMotherLabel">Mother's Legal Name *</label><input type="text" id="panMotherName" required></div>
+          <div class="input-group"><label>Date of Birth *</label><input type="date" id="panDob" required></div>
+        </div>
+        <div class="grid-three">
+          <div class="input-group"><label>ID Number *</label><input type="text" id="panAadhaarNo" maxlength="12" class="font-mono font-bold" required></div>
+          <div class="input-group"><label>Gender *</label><select id="panGender" required><option value="MALE">Male</option><option value="FEMALE">Female</option><option value="TRANSGENDER">Transgender</option></select></div>
+          <div class="input-group"><label>Mobile Number *</label><input type="tel" id="panMobile" maxlength="10" required></div>
+        </div>
+        <div class="input-group"><label>Email ID *</label><input type="email" id="panEmail" required></div>
+        <h5 class="form-sub-header mt-3">2. Address Details</h5>
+        <div class="input-group" style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid var(--border-color);">
+          <label style="color:var(--primary-accent); font-weight:700;">PIN Code *</label>
+          <input type="text" id="panPinCode" maxlength="6" class="font-mono font-bold" oninput="handlePincodeLookup(this.value, 'panStateInput', 'panDistrictInput', 'panTownInput')" required>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>Flat / Door / Block No *</label><input type="text" id="panFlatNo" required></div>
+          <div class="input-group"><label>Building / Village *</label><input type="text" id="panBuilding" required></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>Road / Street / Post Office *</label><input type="text" id="panStreet" required></div>
+          <div class="input-group"><label>Area / Locality *</label><input type="text" id="panArea" required></div>
+        </div>
+        <div class="grid-three">
+          <div class="input-group"><label>State *</label><input type="text" id="panStateInput" required></div>
+          <div class="input-group"><label>District *</label><input type="text" id="panDistrictInput" required></div>
+          <div class="input-group"><label>Town / Post Office *</label><input type="text" id="panTownInput" required></div>
+        </div>
+        <h5 class="form-sub-header mt-3">3. Document Enclosure Type</h5>
+        <div class="grid-three">
+          <div class="input-group"><label>POI *</label><select class="locked-readonly-input" disabled><option selected>Identity Proof</option></select></div>
+          <div class="input-group"><label>POA *</label><select class="locked-readonly-input" disabled><option selected>Address Proof</option></select></div>
+          <div class="input-group"><label>POD *</label><select id="panProofDob" required class="dob-proof-dropdown"></select></div>
+        </div>
+        <h5 class="form-sub-header mt-3">4. Document Uploads (JPG & PDF Supported)</h5>
+        <div id="newPanSpecBanner" style="background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; padding:8px 12px; border-radius:8px; font-size:11px; font-weight:700; margin-bottom:12px;">NSDL Spec: Photo 200×200px | Signature 400×200px</div>
+        <div class="grid-two">
+          <div class="input-group"><label>ID Front (JPG/PNG/PDF) *</label><input type="file" id="fileAadhaarFront" accept="image/jpeg,image/png,application/pdf" required onchange="validateDocFileSize(this)"></div>
+          <div class="input-group"><label>ID Back [Optional]</label><input type="file" id="fileAadhaarBack" accept="image/jpeg,image/png,application/pdf" onchange="validateDocFileSize(this)"></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>DOB Proof (JPG/PNG/PDF) *</label><input type="file" id="fileDobFront" accept="image/jpeg,image/png,application/pdf" required onchange="validateDocFileSize(this)"></div>
+          <div class="input-group"><label id="lblNewPanPhotoSpec">Applicant Photo *</label><input type="file" id="filePhoto" accept="image/jpeg,image/png" required onchange="previewAutoFormatStatus(this, 'NEW', 'PHOTO')"><span id="statusNewPhoto" style="font-size:10px; font-weight:700; color:#059669;"></span></div>
+        </div>
+        <div class="input-group"><label id="lblNewPanSignSpec">Applicant Signature *</label><input type="file" id="fileSignature" accept="image/jpeg,image/png" required onchange="previewAutoFormatStatus(this, 'NEW', 'SIGN')"><span id="statusNewSign" style="font-size:10px; font-weight:700; color:#059669;"></span></div>
+        <button type="submit" id="btnSubmitNewPanForm" class="btn-primary-action w-full mt-3">Submit PAN Application</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= PUBLIC CHANNEL REGISTRATION MODAL ================= -->
+  <div class="modal-overlay no-print" id="publicRegModal">
+    <div class="modal-box text-left" style="max-width: 620px; max-height: 90vh; overflow-y: auto;">
+      <div class="modal-header flex-between">
+        <div><span class="modal-badge" style="background:#eff6ff; color:#2563eb;">Official Onboarding</span><h3 style="font-size: 16px; margin-top: 4px;">Register Your Channel ID</h3></div>
+        <button type="button" class="btn-mini-action" onclick="closePublicRegModal()">Close</button>
+      </div>
+      <form id="publicChannelRegForm" class="mt-3">
+        <div class="grid-two">
+          <div class="input-group">
+            <label>Account Type *</label>
+            <select id="regAccountRoleChoice" required>
+              <option value="RETAILER">Retailer ID</option>
+              <option value="DISTRIBUTOR">Distributor ID</option>
+            </select>
+          </div>
+          <div class="input-group"><label>Select Service ID *</label><select id="regSelectIdCode" required onchange="onSelectIdChanged()"></select></div>
+        </div>
+
+        <div class="input-group"><label>Portal / App Name *</label><input type="text" id="regAppNameDisplay" readonly class="locked-readonly-input"></div>
+
+        <div class="grid-two">
+          <div class="input-group"><label>Applicant Full Name *</label><input type="text" id="regApplicantName" required></div>
+          <div class="input-group"><label>Shop / Business Name *</label><input type="text" id="regShopName" required></div>
+        </div>
+        <div class="grid-two">
+          <div class="input-group"><label>Mobile Number (WhatsApp) *</label><input type="tel" id="regMobile" maxlength="10" required></div>
+          <div class="input-group"><label>Email ID *</label><input type="email" id="regEmail" required></div>
+        </div>
+        <div class="input-group" style="background: #f8fafc; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color);">
+          <label style="color: var(--primary-accent); font-weight:700;">PIN Code *</label>
+          <input type="text" id="regPinCode" maxlength="6" class="font-mono font-bold" oninput="handlePincodeLookup(this.value, 'regStateInput', 'regDistrictInput', 'regTownInput')" required>
+        </div>
+        <div class="grid-three mt-2">
+          <div class="input-group"><label>State *</label><input type="text" id="regStateInput" required></div>
+          <div class="input-group"><label>District *</label><input type="text" id="regDistrictInput" required></div>
+          <div class="input-group"><label>Town / City *</label><input type="text" id="regTownInput" required></div>
+        </div>
+        <div class="input-group"><label>Full Address *</label><textarea id="regFullAddress" rows="2" required></textarea></div>
+        <div class="grid-two">
+          <div class="input-group"><label>ID Number *</label><input type="text" id="regAadhaar" maxlength="12" class="font-mono" required></div>
+          <div class="input-group"><label>PAN Card Number *</label><input type="text" id="regPan" maxlength="10" class="font-mono" required></div>
+        </div>
+        <div class="flex-between mt-3">
+          <button type="button" class="btn-secondary-action" onclick="closePublicRegModal()">Cancel</button>
+          <button type="submit" class="btn-primary-action" style="background:#10b981;"><span>Submit</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay no-print" id="successPopupModal">
+    <div class="success-card-box">
+      <div class="success-check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+      <h3 class="success-title">Submitted<br>Successfully!</h3>
+      <div class="success-info-list">
+        <div class="success-info-item"><span>Name: </span><strong id="successApplicantName">APPLICANT NAME</strong></div>
+        <div class="success-info-item"><span>ID code: </span><strong id="successAckNo" class="success-code-highlight">NC123456789</strong></div>
+      </div>
+      <div class="success-divider"></div>
+      <p class="success-subtext" id="successModalSubtext">Pending Officer approval.</p>
+      <button type="button" class="btn-success-close" onclick="closeSuccessPopupModal()">Close</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay no-print" id="universalComplaintModal">
+    <div class="modal-box text-left" style="max-width: 440px;">
+      <div class="modal-header flex-between">
+        <div><span class="modal-badge" style="background:#ffe4e6; color:#e11d48;">Support System</span><h3 style="font-size: 16px; margin-top: 4px;">Raise Support Ticket</h3></div>
+        <button type="button" class="btn-mini-action" onclick="closeComplaintModal()">✕</button>
+      </div>
+      <form id="globalComplaintForm" class="mt-3">
+        <div class="input-group"><label>Subject *</label><input type="text" id="compSubject" required></div>
+        <div class="input-group"><label>Detailed Message *</label><textarea id="compMessage" rows="4" required></textarea></div>
+        <button type="submit" class="btn-primary-action w-full" style="background:#e11d48;">Submit Ticket to Officer</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay no-print" id="documentViewerModal">
+    <div class="modal-box text-left" style="max-width: 660px; max-height: 90vh; overflow-y: auto;">
+      <div class="modal-header flex-between">
+        <div><span class="modal-badge">Application Form & Files</span><h3 id="docViewAppTitle" style="font-size: 16px; margin-top: 4px;">Application Details</h3></div>
+        <button type="button" class="btn-mini-action" onclick="closeDocumentViewerModal()">✕</button>
+      </div>
+      <div id="docViewerFormDetailsBox" style="background:#f8fafc; border:1px solid var(--border-color); border-radius:10px; padding:14px; font-size:12px; margin-top:12px; line-height:1.7;"></div>
+      <h5 class="form-sub-header mt-3">Uploaded Documents</h5>
+      <div id="docViewerContentList" class="mt-2" style="display:flex; flex-direction:column; gap:10px;"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay no-print" id="officerUpdateModal">
+    <div class="modal-box text-left" style="max-width: 420px;">
+      <div class="modal-header"><span class="modal-badge">Officer Action</span><h3>Approve Application</h3></div>
+      <form id="officerStatusForm" class="mt-2">
+        <input type="hidden" id="modalTargetAppId">
+        <div class="input-group"><label>Token</label><input type="text" id="modalAppIdDisplay" readonly class="font-mono font-bold"></div>
+        <div class="input-group">
+          <label>Select Action / Status *</label>
+          <select id="modalStateSelect" onchange="toggleAppModalRejectionField()">
+            <option value="PROCESSED_SUCCESS">APPROVE & PROCESS (Acknowledged)</option>
+            <option value="UNDER_VERIFICATION">UNDER VERIFICATION</option>
+            <option value="DISPATCHED">ALLOTTED & DISPATCHED</option>
+          </select>
+        </div>
+        <div class="input-group" id="modalAckInputGroup">
+          <label id="modalAckLabel">Assign Official Acknowledgement / Coupon No *</label>
+          <input type="text" id="modalOfficialAckInput" required class="font-mono font-bold">
+        </div>
+        <div class="flex-between mt-3">
+          <button type="button" id="closeOfficerModalBtn" class="btn-secondary-action">Cancel</button>
+          <button type="submit" id="saveOfficerModalBtn" class="btn-primary-action">Submit Decision</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay no-print" id="userProfileModal">
+    <div class="modal-box text-left" style="max-width: 420px;">
+      <div class="modal-header flex-between">
+        <div><span class="modal-badge">Account Profile</span><h3 style="font-size: 16px; margin-top: 4px;">User Credentials</h3></div>
+        <button type="button" class="btn-mini-action" onclick="closeProfileModal()">✕</button>
+      </div>
+      <div class="mt-3" style="background:var(--bg-subtle); padding:14px; border-radius:10px; border:1px solid var(--border-color); display:flex; flex-direction:column; gap:10px; font-size:12px;">
+        <div class="flex-between"><span>Name:</span><strong id="modalProfName">-</strong></div>
+        <div class="flex-between"><span>User ID:</span><code class="font-mono font-bold" id="modalProfId">-</code></div>
+        <div class="flex-between"><span>Role:</span><strong id="modalProfRole">-</strong></div>
+        <div class="flex-between"><span>Mobile:</span><strong id="modalProfPhone">-</strong></div>
+        <div class="flex-between"><span>Coupons Balance:</span><strong class="text-success font-bold" id="modalProfCoupons">0 Pcs</strong></div>
+        <div class="flex-between"><span>Status:</span><span class="status-badge-inline" id="modalProfStatus">APPROVED</span></div>
+      </div>
+      <div id="modalUplineSection" class="mt-3" style="background:#eff6ff; border:1px solid #bfdbfe; padding:12px; border-radius:10px; font-size:12px; display:none; flex-direction:column; gap:6px;">
+        <span id="modalUplineLabel" style="font-weight:800; color:#1e40af; font-size:11px; text-transform:uppercase;">ASSIGNED UPLINE DISTRIBUTOR</span>
+        <div class="flex-between"><span>Name & ID:</span><strong id="modalUplineName">-</strong></div>
+        <div class="flex-between"><span>Mobile Number:</span><strong id="modalUplinePhone" class="font-mono">-</strong></div>
+      </div>
+      <div class="mt-3" style="background:#ecfdf5; border:1px solid #a7f3d0; padding:12px; border-radius:10px; font-size:12px; display:flex; flex-direction:column; gap:6px;">
+        <span style="font-weight:700; color:#065f46; font-size:11px;">OFFICIAL HELPLINE</span>
+        <div class="flex-between"><span>Phone:</span><strong id="modalCompanyPhone">+91 9876543210</strong></div>
+        <div class="flex-between"><span>Email:</span><strong id="modalCompanyEmail">biswascybercafe88@gmail.com</strong></div>
+      </div>
+      <button type="button" class="btn-secondary-action w-full mt-3" onclick="closeProfileModal()">Close</button>
+    </div>
+  </div>
+
+  <div id="statusToast" class="toast-popup"></div>
+  <script src="script.js"></script>
+</body>
+</html>
